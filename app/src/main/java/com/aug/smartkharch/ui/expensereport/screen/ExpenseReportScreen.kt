@@ -1,4 +1,4 @@
-package com.aug.smartkharch.ui.expensereport
+package com.aug.smartkharch.ui.expensereport.screen
 
 import android.widget.Toast
 import androidx.compose.foundation.layout.Arrangement
@@ -10,13 +10,12 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.material.Divider
-import androidx.compose.material.ProgressIndicatorDefaults
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.Button
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -39,7 +38,10 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.aug.smartkharch.R
 import com.aug.smartkharch.data.model.BarChartData
-import com.aug.smartkharch.ui.components.SimpleBarChart
+import com.aug.smartkharch.ui.expensereport.components.CategoryTotalSection
+import com.aug.smartkharch.ui.expensereport.components.DailyTotalsSection
+import com.aug.smartkharch.ui.expensereport.state.ExpenseReportUiState
+import com.aug.smartkharch.ui.expensereport.viewmodel.ExpenseReportViewModel
 import kotlinx.coroutines.delay
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -91,18 +93,13 @@ fun ExpenseReportScreen(
                         .padding(16.dp),
                     verticalArrangement = Arrangement.spacedBy(24.dp)
                 ) {
-                    Text(text = stringResource(R.string.daily_totals), style = MaterialTheme.typography.titleMedium)
-                    SimpleBarChart(data = dailyChartData)
+                    DailyTotalsSection(dailyChartData)
 
-                    Spacer(Modifier.height(8.dp))
-
-                    Divider()
-
-                    Text(text = stringResource(R.string.category_totals), style = MaterialTheme.typography.titleMedium)
-                    SimpleBarChart(data = categoryChartData)
-
+                    HorizontalDivider(
+                        modifier = Modifier.padding(vertical = 8.dp)
+                    )
+                    CategoryTotalSection(categoryChartData)
                     Spacer(Modifier.height(32.dp))
-
                     Button(
                         onClick = {
                             isLoading = true

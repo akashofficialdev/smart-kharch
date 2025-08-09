@@ -1,4 +1,4 @@
-package com.aug.smartkharch.ui.expensereport
+package com.aug.smartkharch.ui.expensereport.state
 
 sealed class ExpenseReportUiState {
     object Loading : ExpenseReportUiState()

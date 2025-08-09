@@ -1,11 +1,8 @@
-package com.aug.smartkharch.ui.expenselist
+package com.aug.smartkharch.ui.expenselist.screen
 
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.DateRange
@@ -27,15 +24,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.aug.smartkharch.R
-import com.aug.smartkharch.data.ExpenseCategory
-import com.aug.smartkharch.ui.components.CalenderDatePicker
-import com.aug.smartkharch.ui.components.CategoryFilterChips
-import com.aug.smartkharch.ui.components.EmptyExpensesView
-import com.aug.smartkharch.ui.components.ExpenseItem
-import com.aug.smartkharch.ui.components.ExpenseSummaryBar
+import com.aug.smartkharch.ui.expenselist.components.CalenderDatePicker
+import com.aug.smartkharch.ui.expenselist.components.EmptyExpensesView
+import com.aug.smartkharch.ui.expenselist.state.ExpenseListUiState
+import com.aug.smartkharch.ui.expenselist.viewmodel.ExpenseListViewModel
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
@@ -49,7 +43,6 @@ fun ExpenseListScreen(
     val state by viewModel.uiState.collectAsState()
     val selectedDate by viewModel.selectedDate.collectAsState()
     var selectedFilterCategory by remember { mutableStateOf<String?>(null) }
-
 
     val titleText = if (selectedDate == LocalDate.now()) {
         stringResource(R.string.today)
@@ -108,37 +101,12 @@ fun ExpenseListScreen(
             }
 
             is ExpenseListUiState.Success -> {
-                val expenses = (state as ExpenseListUiState.Success).expenses
-                val filteredExpenses = selectedFilterCategory?.let { cat ->
-                    expenses.filter { it.category == cat }
-                } ?: expenses
-                val totalCount = filteredExpenses.size
-                val totalAmount = filteredExpenses.sumOf { it.amount }
-
-
-                Column(modifier= Modifier.padding(padding)) {
-                    ExpenseSummaryBar(
-                        totalCount = totalCount,
-                        totalAmount = totalAmount,
-                        modifier = Modifier.padding(bottom = 8.dp)
-                    )
-                    CategoryFilterChips(
-                        categories = ExpenseCategory.List,
-                        selectedCategory = selectedFilterCategory,
-                        onCategorySelected = { selectedFilterCategory = it }
-                    )
-                    if (filteredExpenses.isEmpty()){
-                        Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-                            EmptyExpensesView()
-                        }
-                    }else {
-                        LazyColumn {
-                            items(filteredExpenses) { expense ->
-                                ExpenseItem(expense)
-                            }
-                        }
-                    }
-                }
+                ExpenseListContent(
+                    expenses = (state as ExpenseListUiState.Success).expenses,
+                    selectedCategory = selectedFilterCategory,
+                    onCategorySelected = { selectedFilterCategory = it },
+                    modifier = Modifier.padding(padding)
+                )
             }
 
             is ExpenseListUiState.Error -> {

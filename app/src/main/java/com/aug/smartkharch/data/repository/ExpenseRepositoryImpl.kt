@@ -19,11 +19,7 @@ class ExpenseRepositoryImpl(
         emit(dao.getAllExpenses())
     }
 
-    override fun getExpensesForDateRange(start: Long, end: Long): Flow<List<Expense>> = flow {
-        emit(dao.getExpensesForDateRange(start, end))
-    }
-
-    override fun getExpensesByDate(date: LocalDate): Flow<List<Expense>> {
+    override suspend fun getExpensesByDate(date: LocalDate): Flow<List<Expense>> {
         val startOfDay = date.atStartOfDay(ZoneId.systemDefault()).toInstant().toEpochMilli()
         val endOfDay = date.plusDays(1).atStartOfDay(ZoneId.systemDefault()).toInstant().toEpochMilli() - 1
         return dao.getExpensesByDate(startOfDay, endOfDay)

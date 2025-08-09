@@ -1,8 +1,9 @@
-package com.aug.smartkharch.ui.expensereport
+package com.aug.smartkharch.ui.expensereport.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.aug.smartkharch.domain.repository.ExpenseRepository
+import com.aug.smartkharch.ui.expensereport.state.ExpenseReportUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

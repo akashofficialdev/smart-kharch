@@ -1,21 +1,19 @@
 package com.aug.smartkharch.ui.navigation
 
-import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.slideInVertically
 import androidx.compose.animation.slideOutVertically
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
+import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.aug.smartkharch.ui.expenseentry.ExpenseEntryScreen
-import com.aug.smartkharch.ui.expenselist.ExpenseListScreen
-import com.aug.smartkharch.ui.expensereport.ExpenseReportScreen
-import com.google.accompanist.navigation.animation.AnimatedNavHost
+import com.aug.smartkharch.ui.expenseentry.screen.ExpenseEntryScreen
+import com.aug.smartkharch.ui.expenselist.screen.ExpenseListScreen
+import com.aug.smartkharch.ui.expensereport.screen.ExpenseReportScreen
 
-@OptIn(ExperimentalAnimationApi::class)
 @Composable
 fun AppNavGraph(navController: NavHostController) {
-    AnimatedNavHost(
+    NavHost(
         navController = navController,
         startDestination = NavRoutes.EXPENSE_LIST,
         enterTransition = {

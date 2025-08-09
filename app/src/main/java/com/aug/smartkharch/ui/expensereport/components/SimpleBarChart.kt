@@ -1,4 +1,4 @@
-package com.aug.smartkharch.ui.components
+package com.aug.smartkharch.ui.expensereport.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -7,7 +7,9 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.aug.smartkharch.R
 import com.aug.smartkharch.data.model.BarChartData
 
 @Composable
@@ -17,7 +19,7 @@ fun SimpleBarChart(
     barColor: Color = MaterialTheme.colorScheme.primary
 ) {
     if (data.isEmpty()) {
-        Text("No data")
+        Text(stringResource(R.string.no_data))
         return
     }
 
@@ -33,7 +35,9 @@ fun SimpleBarChart(
             val barHeightRatio = if (maxValue == 0.0) 0f else (item.value / maxValue).toFloat()
             val barHeight = 150.dp * barHeightRatio
             Column(
-                modifier = Modifier.weight(1f).fillMaxHeight(),
+                modifier = Modifier
+                    .weight(1f)
+                    .fillMaxHeight(),
                 horizontalAlignment = androidx.compose.ui.Alignment.CenterHorizontally
             ) {
                 Spacer(modifier = Modifier.weight(weight = maxOf(0.0001f, 1f - barHeightRatio)))

@@ -1,4 +1,4 @@
-package com.aug.smartkharch.ui.components
+package com.aug.smartkharch.ui.expenselist.components
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyRow

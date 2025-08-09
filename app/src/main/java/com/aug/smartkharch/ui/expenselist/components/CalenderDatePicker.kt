@@ -1,10 +1,9 @@
-package com.aug.smartkharch.ui.components
+package com.aug.smartkharch.ui.expenselist.components
 
 import android.app.DatePickerDialog
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.platform.LocalContext
-import com.aug.smartkharch.R
 import java.time.LocalDate
 import java.util.Calendar
 

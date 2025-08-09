@@ -26,6 +26,7 @@
     <string name="category_totals">Category Totals</string>
     <string name="export_as_pdf">Export as PDF</string>
     <string name="report_downloaded">Report Downloaded</string>
+    <string name="no_data">No data</string>
 
 
 </resources>

@@ -1,4 +1,4 @@
-package com.aug.smartkharch.ui.components
+package com.aug.smartkharch.ui.expenseentry.components
 
 import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.heightIn

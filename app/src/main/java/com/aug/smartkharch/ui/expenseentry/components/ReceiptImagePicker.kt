@@ -1,4 +1,4 @@
-package com.aug.smartkharch.ui.components
+package com.aug.smartkharch.ui.expenseentry.components
 
 import android.net.Uri
 import androidx.activity.compose.rememberLauncherForActivityResult
@@ -19,7 +19,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
@@ -27,7 +26,6 @@ import com.aug.smartkharch.R
 
 @Composable
 fun ReceiptImagePicker(imageUri: Uri?, onImagePicked: (Uri?) -> Unit) {
-    val context = LocalContext.current
     val launcher = rememberLauncherForActivityResult(
         contract = ActivityResultContracts.GetContent(),
         onResult = { uri -> onImagePicked(uri) }

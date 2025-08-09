@@ -1,4 +1,4 @@
-package com.aug.smartkharch.ui.expenseentry
+package com.aug.smartkharch.ui.expenseentry.state
 
 sealed class ExpenseEntryError {
     object EmptyTitle : ExpenseEntryError()

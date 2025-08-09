@@ -10,15 +10,11 @@ import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface ExpenseDao {
-
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertExpense(expense: Expense)
 
     @Query("SELECT * FROM expenses ORDER BY date DESC")
     suspend fun getAllExpenses(): List<Expense>
-
-    @Query("SELECT * FROM expenses WHERE date BETWEEN :start AND :end ORDER BY date DESC")
-    suspend fun getExpensesForDateRange(start: Long, end: Long): List<Expense>
 
     @Delete
     suspend fun deleteExpense(expense: Expense)

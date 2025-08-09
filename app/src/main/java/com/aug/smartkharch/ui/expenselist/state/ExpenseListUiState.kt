@@ -1,4 +1,4 @@
-package com.aug.smartkharch.ui.expenselist
+package com.aug.smartkharch.ui.expenselist.state
 
 import com.aug.smartkharch.data.local.entity.Expense
 
