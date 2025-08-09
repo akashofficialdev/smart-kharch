@@ -5,6 +5,15 @@ Track, visualize, and control your daily expenses with ease — anywhere, anytim
 
 ---
 
+## 📸 Screenshots
+<p align="center">
+  <img src="screenshots/ExpenseList.png" width="250"/>
+  <img src="screenshots/AddExpense.png" width="250"/>
+  <img src="screenshots/ExpenseReport.png" width="250"/>
+</p>
+
+---
+
 ## 🛠 Tech Stack
 - **Language:** Kotlin
 - **UI:** Jetpack Compose
@@ -54,15 +63,6 @@ During the development of SmartKharch, AI tool **ChatGPT** were used to:
 
 ## 📥 APK Download
 [Download APK](https://www.dropbox.com/scl/fi/s7cz8z9zngahk4xbz4trz/SmartKharch.apk?rlkey=ixzhl7kd3ofbbbxn1u3l5pug8&st=48qovzm6&dl=0)
-
----
-
-## 📸 Screenshots
-<p align="center">
-  <img src="screenshots/ExpenseList.png" width="250"/>
-  <img src="screenshots/AddExpense.png" width="250"/>
-  <img src="screenshots/ExpenseReport.png" width="250"/>
-</p>
 
 ---
 

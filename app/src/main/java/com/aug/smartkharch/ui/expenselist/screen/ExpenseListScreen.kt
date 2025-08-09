@@ -5,7 +5,9 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.DarkMode
 import androidx.compose.material.icons.filled.DateRange
+import androidx.compose.material.icons.filled.LightMode
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FloatingActionButton
@@ -24,7 +26,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.hilt.navigation.compose.hiltViewModel
 import com.aug.smartkharch.R
 import com.aug.smartkharch.ui.expenselist.components.CalenderDatePicker
 import com.aug.smartkharch.ui.expenselist.components.EmptyExpensesView
@@ -36,7 +37,7 @@ import java.time.format.DateTimeFormatter
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ExpenseListScreen(
-    viewModel: ExpenseListViewModel = hiltViewModel(),
+    viewModel: ExpenseListViewModel,
     onAddExpenseClick: () -> Unit,
     onReportClick: () -> Unit
 ) {
@@ -74,6 +75,12 @@ fun ExpenseListScreen(
                         Icon(
                             painter = painterResource(R.drawable.ic_bar_chart),
                             contentDescription = stringResource(R.string.view_weekly_report)
+                        )
+                    }
+                    IconButton(onClick = { viewModel.toggleTheme() }) {
+                        Icon(
+                            imageVector = if (viewModel.isDarkTheme.collectAsState().value) Icons.Default.LightMode else Icons.Default.DarkMode,
+                            contentDescription = "Toggle Theme"
                         )
                     }
                 }

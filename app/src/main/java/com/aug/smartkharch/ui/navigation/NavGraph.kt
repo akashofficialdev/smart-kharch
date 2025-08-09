@@ -9,10 +9,11 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.aug.smartkharch.ui.expenseentry.screen.ExpenseEntryScreen
 import com.aug.smartkharch.ui.expenselist.screen.ExpenseListScreen
+import com.aug.smartkharch.ui.expenselist.viewmodel.ExpenseListViewModel
 import com.aug.smartkharch.ui.expensereport.screen.ExpenseReportScreen
 
 @Composable
-fun AppNavGraph(navController: NavHostController) {
+fun AppNavGraph(navController: NavHostController, expenseListViewModel: ExpenseListViewModel) {
     NavHost(
         navController = navController,
         startDestination = NavRoutes.EXPENSE_LIST,
@@ -44,6 +45,7 @@ fun AppNavGraph(navController: NavHostController) {
     ){
         composable(NavRoutes.EXPENSE_LIST) {
             ExpenseListScreen(
+                viewModel = expenseListViewModel,
                 onAddExpenseClick = { navController.navigate(NavRoutes.EXPENSE_ENTRY) },
                 onReportClick = { navController.navigate(NavRoutes.EXPENSE_REPORT) }
             )

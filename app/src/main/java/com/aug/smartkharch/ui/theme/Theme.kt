@@ -1,16 +1,12 @@
 package com.aug.smartkharch.ui.theme
 
-import android.app.Activity
-import android.os.Build
+import androidx.compose.animation.animateColorAsState
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
-import androidx.compose.material3.dynamicDarkColorScheme
-import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalContext
+import androidx.compose.runtime.getValue
 
 private val DarkColorScheme = darkColorScheme(
     primary = md_theme_dark_primary,
@@ -67,22 +63,44 @@ private val LightColorScheme = lightColorScheme(
 @Composable
 fun SmartKharchTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
-    // Dynamic color is available on Android 12+
     dynamicColor: Boolean = true,
     content: @Composable () -> Unit
 ) {
-    val colorScheme = when {
-        dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
-            val context = LocalContext.current
-            if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
-        }
+    val targetColors = if (darkTheme) DarkColorScheme else LightColorScheme
 
-        darkTheme -> DarkColorScheme
-        else -> LightColorScheme
-    }
+    // Animate colors for smooth transition
+    val primary by animateColorAsState(targetColors.primary)
+    val onPrimary by animateColorAsState(targetColors.onPrimary)
+    val primaryContainer by animateColorAsState(targetColors.primaryContainer)
+    val onPrimaryContainer by animateColorAsState(targetColors.onPrimaryContainer)
+    val secondary by animateColorAsState(targetColors.secondary)
+    val onSecondary by animateColorAsState(targetColors.onSecondary)
+    val secondaryContainer by animateColorAsState(targetColors.secondaryContainer)
+    val onSecondaryContainer by animateColorAsState(targetColors.onSecondaryContainer)
+    val background by animateColorAsState(targetColors.background)
+    val onBackground by animateColorAsState(targetColors.onBackground)
+    val surface by animateColorAsState(targetColors.surface)
+    val onSurface by animateColorAsState(targetColors.onSurface)
+    // Animate more colors as needed...
+
+    val animatedColors = targetColors.copy(
+        primary = primary,
+        onPrimary = onPrimary,
+        primaryContainer = primaryContainer,
+        onPrimaryContainer = onPrimaryContainer,
+        secondary = secondary,
+        onSecondary = onSecondary,
+        secondaryContainer = secondaryContainer,
+        onSecondaryContainer = onSecondaryContainer,
+        background = background,
+        onBackground = onBackground,
+        surface = surface,
+        onSurface = onSurface,
+        // Add the rest as needed or just keep them static from targetColors
+    )
 
     MaterialTheme(
-        colorScheme = colorScheme,
+        colorScheme = animatedColors,
         typography = Typography,
         content = content
     )

@@ -27,6 +27,13 @@ class ExpenseListViewModel @Inject constructor(
         _selectedDate.value = date
     }
 
+    var isDarkTheme =  MutableStateFlow(false)
+        private set
+
+    fun toggleTheme() {
+        isDarkTheme.value = !isDarkTheme.value
+    }
+
     init {
         viewModelScope.launch {
             _selectedDate.flatMapLatest { date ->
