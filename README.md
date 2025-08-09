@@ -62,7 +62,7 @@ During the development of SmartKharch, AI tool **ChatGPT** were used to:
 3. Sync Gradle & run the app.
 
 ## 📥 APK Download
-[Download APK](https://www.dropbox.com/scl/fi/s7cz8z9zngahk4xbz4trz/SmartKharch.apk?rlkey=ixzhl7kd3ofbbbxn1u3l5pug8&st=48qovzm6&dl=0)
+[Download APK](https://www.dropbox.com/scl/fi/zjo6je0scubbpno8r7x2c/SmartKharch.apk?rlkey=lxh6o0nvkeurds01jgbh0wlzm&st=vr7tcqjd&dl=0)
 
 ---
 
