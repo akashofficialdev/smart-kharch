@@ -34,14 +34,13 @@ During the development of SmartKharch, AI tool **ChatGPT** were used to:
 ---
 
 ## 📥 APK Download
-[Download APK](https://your-apk-link-here.com)  
-*(Replace with actual link to GitHub Releases, Google Drive, or other hosting.)*
+[Download APK](https://www.dropbox.com/scl/fi/2qdeokjtezvdym3teceoc/SmartKharch.apk?rlkey=kdu9din4msz292fi4zks90pes&st=i7qp18vx&dl=0)
 
 ---
 
 ## 📸 Screenshots
 | Expense Report                                   | Add Expense                              | Expense List                            |
 |--------------------------------------------------|------------------------------------------|-----------------------------------------|
-    | ![Expense Report](screenshots/ExpenseReport.png) | ![Bar Chart](screenshots/AddExpense.png) | ![Date Picker](/Users/a23204258/AndroidStudioProjects/SmartKharch/screenshots/ExpenseList.png) |
+    | ![Expense Report](screenshots/ExpenseReport.png) | ![Bar Chart](screenshots/AddExpense.png) | ![Date Picker](screenshots/ExpenseList.png) |
 
 ---
