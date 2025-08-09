@@ -39,8 +39,13 @@ During the development of SmartKharch, AI tool **ChatGPT** were used to:
 ---
 
 ## 📸 Screenshots
-| Expense Report                                   | Add Expense                              | Expense List                            |
-|--------------------------------------------------|------------------------------------------|-----------------------------------------|
-    | ![Expense Report](screenshots/ExpenseReport.png) | ![Bar Chart](screenshots/AddExpense.png) | ![Date Picker](screenshots/ExpenseList.png) |
+<h4>Expense List</h4>
+<img src="screenshots/ExpenseList.png" width="300"/>
+
+<h4>Add Expense</h4>
+<img src="screenshots/AddExpense.png" width="300"/>
+
+<h4>Expense Report</h4>
+<img src="screenshots/ExpenseReport.png" width="300"/>
 
 ---
