@@ -40,7 +40,7 @@ During the development of SmartKharch, AI tool **ChatGPT** were used to:
 - 📂 Category-wise expense breakdown (Food, Travel, Staff, Utility).
 - 📅 Date picker with min/max date constraints.
 - 🗄 MVVM architecture with Hilt dependency injection.
-- 🔄 Reactive UI updates with StateFlow.
+- 🔄 Reactive UI updates with `StateFlow`.
 - 🧪 Mock data generation for development/testing.
 
 ---
