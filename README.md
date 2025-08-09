@@ -34,7 +34,7 @@ During the development of SmartKharch, AI tool **ChatGPT** were used to:
 ---
 
 ## 📥 APK Download
-[Download APK](https://www.dropbox.com/scl/fi/2qdeokjtezvdym3teceoc/SmartKharch.apk?rlkey=kdu9din4msz292fi4zks90pes&st=i7qp18vx&dl=0)
+[Download APK](https://www.dropbox.com/scl/fi/2yakyenqbb4tysnmgne71/SmartKharch.apk?rlkey=lzihua7i430udn3ymervy2kam&st=6rety0jd&dl=0)
 
 ---
 
