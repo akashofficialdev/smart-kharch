@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">SmartKharch</string>
+    <string name="todays_expenses">Today\'s Expenses</string>
+    <string name="view_weekly_report">View Weekly Report</string>
+    <string name="no_expenses_today_title">No expenses yet</string>
+    <string name="no_expenses_today_subtitle">Track your spending by adding your first expense</string>
+    <string name="amount">Amount (₹)</string>
+    <string name="title">Title</string>
+    <string name="notes_optional">Notes (optional)</string>
+    <string name="expense_added">Expense Added</string>
+    <string name="add_expense">Add Expense</string>
+    <string name="today">Today</string>
+    <string name="something_went_wrong">Something went wrong</string>
+    <string name="total_spent">Total Spent</string>
+    <string name="total_expenses">Total Expenses</string>
+    <string name="all">All</string>
+    <string name="category">Category</string>
+    <string name="receipt_image_optional">Receipt Image (optional)</string>
+    <string name="tap_to_upload">Tap to upload</string>
+    <string name="total_spent_today">Total Spent Today: ₹%1$s</string>
+    <string name="save_expense">Save Expense</string>
+    <string name="error_title_empty">Title cannot be empty</string>
+    <string name="error_invalid_amount">Amount must be greater than zero</string>
+    <string name="weekly_report">Weekly Report</string>
+    <string name="daily_totals">Daily Totals</string>
+    <string name="category_totals">Category Totals</string>
+    <string name="export_as_pdf">Export as PDF</string>
+    <string name="report_downloaded">Report Downloaded</string>
+
+
+</resources>
