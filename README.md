@@ -1,8 +1,16 @@
 # SmartKharch
 
 ## 📌 App Overview
-SmartKharch is an expense tracking and reporting app built with **Jetpack Compose**, **MVVM architecture**, and **Hilt** for dependency injection.  
-It provides users with visual insights into daily and category-wise spending using **bar charts** and **category summaries**.
+Track, visualize, and control your daily expenses with ease — anywhere, anytime.
+
+---
+
+## 🛠 Tech Stack
+- **Language:** Kotlin
+- **UI:** Jetpack Compose
+- **Architecture:** MVVM
+- **DI:** Hilt
+- **Database:** Room
 
 ---
 
@@ -25,26 +33,42 @@ During the development of SmartKharch, AI tool **ChatGPT** were used to:
 
 ## ✅ Features Implemented
 - 📊 Bar chart visualization for last 7 days expenses (MOCK).
+- 🌓 Light/Dark Theme support.
+- 💾 Room DB for local data persistence.
+- ✅ Validation on Expense Entry.
+- ♻️ Reusable UI components.
 - 📂 Category-wise expense breakdown (Food, Travel, Staff, Utility).
 - 📅 Date picker with min/max date constraints.
 - 🗄 MVVM architecture with Hilt dependency injection.
-- 🔄 Reactive UI updates with `StateFlow`.
+- 🔄 Reactive UI updates with StateFlow.
 - 🧪 Mock data generation for development/testing.
 
 ---
 
+## ⚙️ Installation
+1. Clone the repository
+   ```bash
+   git clone https://github.com/akashofficialdev/smart-kharch.git
+2. Open in Android Studio.
+3. Sync Gradle & run the app.
+
 ## 📥 APK Download
-[Download APK](https://www.dropbox.com/scl/fi/2yakyenqbb4tysnmgne71/SmartKharch.apk?rlkey=lzihua7i430udn3ymervy2kam&st=6rety0jd&dl=0)
+[Download APK](https://www.dropbox.com/scl/fi/s7cz8z9zngahk4xbz4trz/SmartKharch.apk?rlkey=ixzhl7kd3ofbbbxn1u3l5pug8&st=48qovzm6&dl=0)
 
 ---
 
 ## 📸 Screenshots
-<h4>Expense List</h4>
-<img src="screenshots/ExpenseList.png" width="300"/>
+<p align="center">
+  <img src="screenshots/ExpenseList.png" width="250"/>
+  <img src="screenshots/AddExpense.png" width="250"/>
+  <img src="screenshots/ExpenseReport.png" width="250"/>
+</p>
 
-<h4>Add Expense</h4>
-<img src="screenshots/AddExpense.png" width="300"/>
-
-<h4>Expense Report</h4>
-<img src="screenshots/ExpenseReport.png" width="300"/>
 ---
+
+## 🔗 Repository Link
+[![GitHub Repo](https://img.shields.io/badge/View%20on%20GitHub-000?logo=github&logoColor=white)](https://github.com/akashofficialdev/smart-kharch)
+
+![Kotlin](https://img.shields.io/badge/Kotlin-1.9-orange?logo=kotlin)
+![Platform](https://img.shields.io/badge/Platform-Android-green?logo=android)
+![License](https://img.shields.io/badge/License-MIT-blue)

@@ -66,7 +66,7 @@ fun NotesField(
         modifier = Modifier.fillMaxWidth(),
         singleLine = false,
         keyboardOptions = KeyboardOptions(
-            keyboardType = KeyboardType.Number,
+            keyboardType = KeyboardType.Text,
             imeAction = ImeAction.Done
         ),
         keyboardActions = KeyboardActions(
